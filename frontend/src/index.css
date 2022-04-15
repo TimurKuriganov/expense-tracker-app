@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  width: 60vw;
+  height: 100vh;
+}
+.container {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+input:focus,textarea:focus,select:focus {
+  outline: none !important;
+  border: black;
+  box-shadow: 0 0 5px black;
+}
+select {
+  color:black;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+}
+
+
+.balance {
+  font-size: 1.5rem;
+}
+
+.btn {
+  padding: 5px 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+  appearance: button;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-sm {
+  width: 100px;
+  font-size: 13px;
+}
+
+.btn:hover {
+  transform: scale(0.95);
+}
+
+/*------------ TRANSACTIONS ------------------------- */
+
+.transactions-container {  
+  max-width: 700px;
+  width: 70%;
+}
+.transactions-container ul {
+  overflow: auto;
+  max-height: 24rem;
+  border-radius: 0 0 0 15px;
+}
+
+.transaction,
+.transaction-headings {
+  display: grid;
+  grid-template-columns: 20% 40% 20% 20%;
+  height: 3rem;
+  grid-template-rows: auto;
+  justify-content: center;
+  background: #f4f4f4;
+  align-items: center;
+  padding: 10px 5px;
+  border-bottom: 0.5px solid black;
+  overflow: hidden;
+}
+.transaction-headings {
+  border-radius: 15px 15px 0 0;
+  border-bottom: 2px solid black;
+  font-weight: 700;
+  max-width: 700px;
+}
+.transaction div:nth-child(4) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.transaction > span{
+  width: 100%;
+  overflow: hidden;
+  height: 1.5rem;
+}
+.transaction:last-of-type {
+  border-bottom: none;
+  /* border-radius: 0 0 10px 10px; */
+}
+.minus {
+  color: red;
+}
+.plus {
+  color: green;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  color: #000;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-close:hover {
+  color: red;
+  transform: scale(0.98);
+}
+
+.loadingSpinnerContainer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 5000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loadingSpinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: #000 transparent #555 transparent;
+  border-radius: 50%;
+  animation: spin 1.2s linear infinite;
+}
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (max-width: 1150px) and (min-width: 801px) {
+  body {
+    width: 60vw;
+  }
+  .transactions-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    width: 100%;
+    padding: 10px;
+  }
+  .transactions-container {
+    width: 100%;
+    height: 700px;
+  }
+  .transaction-headings {
+    display: none;
+  }
+  .transaction {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: 150px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .transaction-headings {
+    display: none;
+  }
+  .transaction:first-of-type {
+    border-radius: 10px 10px 0 0;
+  }
+  .transaction:last-of-type {
+    /* border-bottom: none; */
+    border-radius: 0 0 10px 10px;
+  }
+
+  .ticket-created h2,
+  .heading h1 {
+    font-size: 2rem;
+  }
+
+  .heading p {
+    font-size: 1.5rem;
+  }
+}

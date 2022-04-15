@@ -1,0 +1,63 @@
+.form {
+  max-width: 700px;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #e6e6e6;
+  border-radius: 5px;
+}
+
+.form-group label {
+  text-align: left;
+  display: block;
+}
+.form-group:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-group button {
+  width: 80%;
+  margin: 5px;
+}
+.form-group button:first-child {
+  background-color: green;
+}
+
+.add-form-transaction {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.add-form-transaction button {
+  width: 100%;
+}
+
+button:disabled {
+  background-color: lightgray;
+}
+
+@media (max-width: 1150px) and (min-width: 801px) {
+  .form {
+    width: 100%;
+    background-color: 'red';
+  }
+}
+
+@media (max-width: 800px) {
+  .form {
+    /* width: 40rem; */
+    width: 100%;
+    left: calc(50% - 20rem);
+    right: calc(50% - 20rem);
+  }
+}
+
+

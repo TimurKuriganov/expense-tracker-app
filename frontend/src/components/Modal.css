@@ -1,0 +1,95 @@
+.modalBackground {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  overflow: auto;
+  top: 20vh;
+  width: 40%;
+  max-height: 60%;  
+  left: 5%;
+  right: 5%;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 30;
+  animation: slide-down 300ms ease-out forwards;
+}
+.modal-transaction {
+  display: flex;
+  width: 80%;
+  flex-direction: column;
+  flex-basis: 60%;
+  margin-left: 0px;
+}
+.modal-transaction > h3 {
+  margin-left: 0.5rem;
+  font-size: 25px;
+}
+.modal-item {
+  word-wrap: break-word;
+  width: 90%;
+  margin-left: .5rem;
+  padding-bottom: 10px;
+}
+.modal-item span {
+  display: block;
+  margin-bottom: 0;
+  white-space: pre-line;
+  margin-left: 5px;
+}
+.edit input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b5b3b3;
+  border-radius: 5px;
+  font-size: 14px;
+  
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 25%;
+}
+.actions button {
+  box-sizing: content-box;
+  /* flex-basis: 30%; */
+  margin: .5rem 0;
+}
+
+@media (max-width: 768px) {
+  .modal {
+    width: 90%;
+    max-height: 70%;
+  }
+}
+/* @media (min-width: 768px) {
+  .modal {
+    width: 50%;
+    left: 50%;
+    max-height: 60%;
+  }
+} */
+
+@keyframes slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-3rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -34,9 +34,13 @@ app.use((err, req, res, next) => {
       status
     });
   } else if (message === 'Page not found') {
+    console.log('page not found delete', err.message);
     return res.status(status).json({
-      error: message,
-      status
+      error: message
+    })
+  } else if (err.name=== 'CastError') {
+    return res.status(400).json({
+      message: 'Transaction not found'
     })
   } else {
     res.status(500).json({
